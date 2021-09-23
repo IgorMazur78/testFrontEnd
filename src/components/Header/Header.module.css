@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  width: 100%;
+  height: var(--header-height);
+  background-color: #002b32;
+}
+.listHeader {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+}
+.logo {
+  margin-left: 10%;
+  font-family: var(--main-font);
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+.route {
+  font-family: var(--main-font);
+  margin-left: 20%;
+  font-size: 16px;
+  color: #aaa;
+  text-decoration: none;
+}
+.route:hover {
+  color: white;
+}
+.routeActive {
+  composes: route;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .header{
+    justify-content: space-between;
+  }
+}

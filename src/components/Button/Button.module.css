@@ -1,0 +1,23 @@
+.button{
+    width:35%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+.button:hover {
+  background: #ccc;
+  transition: .2s all;
+}
+  @media screen and (min-width: 768px) {
+       
+      .button {
+        --size: 60px;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        background: #ddd;
+        box-shadow: var(--button-shadow);
+      }
+  }

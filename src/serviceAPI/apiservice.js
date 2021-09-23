@@ -1,12 +1,13 @@
-const BaseApiProducts = "https://api.thedogapi.com/v1/breeds"
-const fetchBreedsPage = (limitItem,numberPage) => {
-    return fetch(
-        `${BaseApiProducts}?limit=${limitItem}&page=${numberPage}`
-        
-    ).then((res)=>res.json())
-}
+const BaseApiProducts = 'https://api.thedogapi.com/v1/breeds';
 
-export default {
-    fetchBreedsPage,
- 
-}
+export const getPage = (limitItem, numberPage) => {
+  return fetch(`${BaseApiProducts}?limit=${limitItem}&page=${numberPage}`).then(
+    res => res.json()
+  );
+};
+
+export const getNextPage = (limitItem, numberPage) => {
+  return fetch(
+    `${BaseApiProducts}?limit=${limitItem}&page=${numberPage + 1}`
+  ).then(res => res.json());
+};

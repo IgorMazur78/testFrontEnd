@@ -1,0 +1,49 @@
+.gallery {
+  margin: 20px;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 1 rem;
+  width: 100%;
+}
+
+.item {
+  margin-bottom: 1rem;
+  width: 360px;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    position: relative;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .item {
+    max-width: calc(25% - 1rem);
+    flex-basis: calc(25% - 1rem);
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0 0.5rem 1rem;
+  }
+  .buttonWrapperNext {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+  }
+  .buttonWrapperPrev {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+  }
+
+}
