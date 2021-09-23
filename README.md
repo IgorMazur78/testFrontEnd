@@ -1,3 +1,39 @@
+# Name
+
+MazurIhor
+
+# Contact
+
+spanishman0605@gmail.com
+https://github.com/IgorMazur78/testfrontend
+
+# Name project
+
+Test Front-end
+
+# task
+
+Test task - trainee - front
+Let’s start
+In this assessment you will be creating a simple SPA application using React, Vue or Angular.
+As programming language you can use typescript or javascript
+Step 1: Home page
+Create a homepage like the image below.
+It should have a header with logo and navigation, content section with card slider and footer bar.
+Data for cards should be fetched asynchronously from any open API like
+https://api.thedogapi.com/v1/breeds?limit=10&page=0. There should be a maximum of 8 cards
+in the slider. Each card should have at least an image and a title.
+Step 2: Product page
+Create a product page that shows a grid with all items from a webservice in a way that is shown
+in design. Grid should be responsive.
+Wrap-up
+When you are finished
+- provide a small explanation on how to build and run the project in the readme file.
+- upload to GitHub (remember to remove the node_modules folder from your codebase),
+and send us back a link to GitHub.
+Invariant failed: You should not use <NavLink> outside a <Router>
+index.js:1 Warning: Encountered two children with the same key, `rkiByec47`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

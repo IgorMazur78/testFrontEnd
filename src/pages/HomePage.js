@@ -2,7 +2,7 @@ import React from 'react';
 import Dogs from '../components/Dogs';
 import style from './Pages.module.css';
 
-export default function HomePage() {
+function HomePage() {
   const numberPage = 3;
   return (
     <div>
@@ -11,3 +11,4 @@ export default function HomePage() {
     </div>
   );
 }
+export default HomePage;

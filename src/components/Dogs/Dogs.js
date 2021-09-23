@@ -3,17 +3,17 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import routers from '../../routers';
 import style from './Dogs.module.css';
-import { getPage, getNextPage } from '../../serviceAPI/apiservice';
+import { getPage, getNextPage } from '../../services/api';
 import Spinner from '../Spinner/Spinner';
 import Dog from '../Dog/Dog';
 import Button from '../Button/Button';
 
 const { gallery, list, item, buttonWrapperNext, buttonWrapperPrev } = style;
 
-export default function Dogs({ listItem }) {
+function Dogs({ listItem }) {
   const [products, setProducts] = useState(null);
-  const [nextProducts, setNextProducts] = useState(null);
-  const [page, setPage] = useState(null);
+  const [nextProducts, setNextProducts] = useState([]);
+  const [page, setPage] = useState(20);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState('false');
 
@@ -36,9 +36,8 @@ export default function Dogs({ listItem }) {
     }
   };
   const handleClickToPrev = () => {
-    if (nextProducts && nextProducts?.length > 1) {
-      setProducts(nextProducts);
-      setPage(prev => (nextProducts.length > 0 ? prev - 1 : prev));
+    if (page > 0) {
+      setPage(prev => prev - 1);
     }
   };
 
@@ -68,9 +67,13 @@ export default function Dogs({ listItem }) {
           )}
         </ul>
         <div key={uuidv4()} className={buttonWrapperNext}>
-          {products ? <Button title="NEXT" handleClick={handleClick} /> : null}
+          {console.log('nextProducts?.length')}
+          {products && nextProducts.length > 0 ? (
+            <Button title="NEXT" handleClick={handleClick} />
+          ) : null}
         </div>
       </section>
     </>
   );
 }
+export default Dogs;

@@ -1,11 +1,12 @@
 .gallery {
-  margin: 20px;
+
   text-align: center;
 }
 
 .list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 1 rem;
   width: 100%;
 }
@@ -24,6 +25,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items:stretch;
     padding: 1rem;
   }
   .item {
