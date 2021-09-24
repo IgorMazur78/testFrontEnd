@@ -13,7 +13,7 @@ const { gallery, list, item, buttonWrapperNext, buttonWrapperPrev } = style;
 function Dogs({ listItem }) {
   const [products, setProducts] = useState(null);
   const [nextProducts, setNextProducts] = useState([]);
-  const [page, setPage] = useState(20);
+  const [page, setPage] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState('false');
 
