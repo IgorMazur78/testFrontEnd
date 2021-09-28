@@ -5,7 +5,7 @@ const {
   container,
   container8,
   photo,
-  photo8,
+  photoWrapper8,
   photoWrapper,
   title,
   description,
@@ -22,12 +22,11 @@ function Dog({ numberCard, card }) {
   } = card;
   return (
     <div className={numberCard === 3 ? container : container8}>
-      <div className={photoWrapper} key={reference_image_id}>
-        <img
-          className={numberCard === 3 ? photo : photo8}
-          src={image.url}
-          alt={name}
-        />
+      <div
+        className={numberCard === 3 ? photoWrapper : photoWrapper8}
+        key={reference_image_id}
+      >
+        <img className={photo} src={image.url} alt={name} />
       </div>
       <h4 className={title}>{name}</h4>
       <p className={description}>{bred_for}</p>
