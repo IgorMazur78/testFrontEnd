@@ -1,8 +1,15 @@
 import React from 'react';
 import style from './Dog.module.css';
 
-const { container, container8, photo, photoWrapper, title, description } =
-  style;
+const {
+  container,
+  container8,
+  photo,
+  photo8,
+  photoWrapper,
+  title,
+  description,
+} = style;
 
 function Dog({ numberCard, card }) {
   const {
@@ -16,7 +23,11 @@ function Dog({ numberCard, card }) {
   return (
     <div className={numberCard === 3 ? container : container8}>
       <div className={photoWrapper} key={reference_image_id}>
-        <img className={photo} src={image.url} alt={name} />
+        <img
+          className={numberCard === 3 ? photo : photo8}
+          src={image.url}
+          alt={name}
+        />
       </div>
       <h4 className={title}>{name}</h4>
       <p className={description}>{bred_for}</p>
