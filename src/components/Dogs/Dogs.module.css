@@ -1,5 +1,4 @@
 .gallery {
-
   text-align: center;
 }
 
@@ -18,22 +17,43 @@
 
 @media screen and (min-width: 768px) {
   .gallery {
+
     position: relative;
   }
   .list {
+    min-height: 100%;
     display: flex;
-    flex-wrap: wrap;
+
+    /* flex-wrap: wrap; */
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:stretch;
+    justify-content:space-between;
     align-items:stretch;
     padding: 1rem;
-  }
+    }
+    .list8 {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      /* justify-content:stretch; */
+      justify-content:space-between;
+      align-items:stretch;
+      padding: 1rem;
+      }
   .item {
-    max-width: calc(25% - 1rem);
+    max-width: calc(35% - 1rem);
     flex-basis: calc(25% - 1rem);
     flex-grow: 1;
     flex-shrink: 1;
     margin: 0 0.5rem 1rem;
+  }
+  .item8{
+    max-width: calc(25% - 1rem);
+    flex-basis: calc(25% - 1rem);
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0 0.5rem 1rem
+
   }
   .buttonWrapperNext {
     position: absolute;

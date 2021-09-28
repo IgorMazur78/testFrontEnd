@@ -8,7 +8,15 @@ import Spinner from '../Spinner/Spinner';
 import Dog from '../Dog/Dog';
 import Button from '../Button/Button';
 
-const { gallery, list, item, buttonWrapperNext, buttonWrapperPrev } = style;
+const {
+  gallery,
+  list,
+  list8,
+  item,
+  item8,
+  buttonWrapperNext,
+  buttonWrapperPrev,
+} = style;
 
 function Dogs({ listItem }) {
   const [products, setProducts] = useState(null);
@@ -35,11 +43,14 @@ function Dogs({ listItem }) {
       setPage(prev => (nextProducts.length > 0 ? prev + 1 : prev));
     }
   };
-  const handleClickToPrev = () => {
-    if (page > 0) {
-      setPage(prev => prev - 1);
-    }
-  };
+  // const handleClickToPrev = () => {
+  //   if (page > 0) {
+  //     setPage(prev => prev - 1);
+  //   }
+  // };
+  const isNextButton = (listItem === 3 && nextProducts.length !== 0) || false;
+  console.log('products:', products);
+  console.log('nextProducts.length:', nextProducts.length);
 
   return (
     <>
@@ -50,16 +61,16 @@ function Dogs({ listItem }) {
         </p>
       )}
       <section className={gallery}>
-        <div key={uuidv4()} className={buttonWrapperPrev}>
+        {/* <div key={uuidv4()} className={buttonWrapperPrev}>
           {page >= 1 ? (
             <Button title="PREV" handleClick={handleClickToPrev} />
           ) : null}
-        </div>
-        <ul className={list}>
+        </div> */}
+        <ul className={listItem === 3 ? list : list8}>
           {products ? (
             products.map(product => (
-              <li key={uuidv4()} className={item}>
-                <Dog card={product} />
+              <li key={uuidv4()} className={listItem === 3 ? item : item8}>
+                <Dog numberCard={listItem} card={product} />
               </li>
             ))
           ) : (
@@ -67,10 +78,7 @@ function Dogs({ listItem }) {
           )}
         </ul>
         <div key={uuidv4()} className={buttonWrapperNext}>
-          {console.log('nextProducts?.length')}
-          {products && nextProducts.length > 0 ? (
-            <Button title="NEXT" handleClick={handleClick} />
-          ) : null}
+          {isNextButton ? <Button handleClick={handleClick} /> : null}
         </div>
       </section>
     </>

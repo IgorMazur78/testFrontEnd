@@ -4,11 +4,11 @@ import style from './Button.module.css';
 
 const { button } = style;
 
-function Button({ handleClick, title }) {
+function Button({ handleClick }) {
   return (
    
       <button type="button" className={button} onClick={handleClick}>
-        {title}
+      ❯
       </button>
    
   );
