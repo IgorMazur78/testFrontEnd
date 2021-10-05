@@ -43,11 +43,11 @@ function Dogs({ listItem }) {
       setPage(prev => (nextProducts.length > 0 ? prev + 1 : prev));
     }
   };
-  // const handleClickToPrev = () => {
-  //   if (page > 0) {
-  //     setPage(prev => prev - 1);
-  //   }
-  // };
+  const handleClickToPrev = () => {
+    if (page > 0) {
+      setPage(prev => prev - 1);
+    }
+  };
   const isNextButton = (listItem === 3 && nextProducts.length !== 0) || false;
   console.log('products:', products);
   console.log('nextProducts.length:', nextProducts.length);
@@ -61,11 +61,11 @@ function Dogs({ listItem }) {
         </p>
       )}
       <section className={gallery}>
-        {/* <div key={uuidv4()} className={buttonWrapperPrev}>
+        <div key={uuidv4()} className={buttonWrapperPrev}>
           {page >= 1 ? (
-            <Button title="PREV" handleClick={handleClickToPrev} />
+            <Button title="❮" handleClick={handleClickToPrev} />
           ) : null}
-        </div> */}
+        </div>
         <ul className={listItem === 3 ? list : list8}>
           {products ? (
             products.map(product => (
@@ -78,7 +78,7 @@ function Dogs({ listItem }) {
           )}
         </ul>
         <div key={uuidv4()} className={buttonWrapperNext}>
-          {isNextButton ? <Button handleClick={handleClick} /> : null}
+          {isNextButton ? <Button title="❯" handleClick={handleClick} /> : null}
         </div>
       </section>
     </>
